@@ -1,6 +1,15 @@
 .header {
     display: flex;
     padding: 15px;
-    background: aqua fixed;
+    background: deepskyblue fixed;
     align-self: center;
+}
+
+.logoText {
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.logo {
+    display: none;
 }
