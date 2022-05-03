@@ -1,2 +1,3 @@
-export {default as Main} from "./main";
-export {default as Test} from "./test";
+export {default as Main} from "./Main";
+export {default as AddWord} from "./AddWord";
+export {default as WordList} from "./WordList";

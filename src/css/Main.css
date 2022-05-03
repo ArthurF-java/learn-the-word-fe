@@ -1,3 +1,8 @@
 .main {
     text-align: center;
 }
+
+.count {
+    color: forestgreen;
+    font-size: 1.2em;
+}

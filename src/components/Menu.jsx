@@ -1,23 +1,35 @@
 import React from 'react';
 import '../css/Menu.css';
+import {Link} from "react-router-dom";
 
+function getUrl(url) {
+    switch (url) {
+        case 'Word lists':
+            return '/word-lists';
+        case 'All words':
+            return 'ORC';
+        case 'Accounts words' :
+            return 'BD';
+        case 'Add words' :
+            return '/add-word';
+    }
+}
 
-function Menu(props) {
+function Menu({items}) {
 
     const [activeItem, setActiveItem] = React.useState(null);
-
-    const onSelectItem = (index) => {
-        setActiveItem(index)
-    }
 
     return (
         <div className="menu">
             <ul>
-                {props.item.map((element, index) => (
-                    <li className={activeItem === index ? 'active_button' : ''}
-                        onClick={() => onSelectItem(index)}
-                        key={`${element}_${index}`}> {element}
-                    </li>
+                {items.map((name, index) => (
+                    <Link to={getUrl(name)} style={{ textDecoration: 'none' }}>
+                        <li className={activeItem === index ? 'active_button' : ''}
+                            onClick={() => setActiveItem(index)}
+                            key={`${name}_${index}`}>
+                            {name}
+                        </li>
+                    </Link>
                 ))}
             </ul>
         </div>
