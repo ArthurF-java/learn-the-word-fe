@@ -8,18 +8,19 @@ function Header() {
 
     const menu = ['Word lists', 'All words', 'Accounts words', "Add words"]
 
+    const [activeItem, setActiveItem] = React.useState(null);
 
     return (
         <div className="wrap">
             <div className="header">
                 <Link to="/">
-                    <img width="65" height="65" src={logoPng} className="logoClass" alt="Main logo"/>
+                    <img onClick={() => setActiveItem(null)} width="65" height="65" src={logoPng} className="logoClass" alt="Main logo"/>
                 </Link>
                 <p className="header_text">
                     LEARN THE WORD
                 </p>
             </div>
-            <Menu items={menu} />
+            <Menu items={menu} activeItem={activeItem} setActiveItem={setActiveItem}/>
         </div>
     );
 }
